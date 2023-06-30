@@ -1276,6 +1276,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "example"
+version = "0.12.0"
+dependencies = [
+ "clap 4.3.2",
+ "hex",
+ "hex-literal",
+ "k256",
+ "mjson-core",
+ "rand_core",
+ "risc0-zkvm",
+ "serde",
+ "sha-methods2",
+]
+
+[[package]]
 name = "exr"
 version = "1.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2235,6 +2250,15 @@ dependencies = [
  "log",
  "wasi",
  "windows-sys 0.48.0",
+]
+
+[[package]]
+name = "mjson-core"
+version = "0.1.0"
+dependencies = [
+ "k256",
+ "risc0-zkvm",
+ "serde",
 ]
 
 [[package]]
@@ -3604,6 +3628,13 @@ dependencies = [
 
 [[package]]
 name = "sha-methods"
+version = "0.1.0"
+dependencies = [
+ "risc0-build",
+]
+
+[[package]]
+name = "sha-methods2"
 version = "0.1.0"
 dependencies = [
  "risc0-build",

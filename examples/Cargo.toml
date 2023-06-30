@@ -20,6 +20,7 @@ members = [
     "wordle/core",
     "zkevm-demo",
     "zkevm-demo/core",
+    "my-example2",
 ]
 
 # Always optimize; otherwise tests take excessively long.
