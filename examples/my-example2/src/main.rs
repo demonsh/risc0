@@ -12,17 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+use bincode::serialize;
 use clap::{Arg, Command};
 use hex_literal::hex;
 use k256::ecdsa::{signature::Signer, Signature, SigningKey, VerifyingKey};
 use mjson_core::Outputs;
 // use rand_core::OsRng;
+use serde::{Deserialize, Serialize};
 use risc0_zkvm::{
     serde::{from_slice, to_vec},
     sha::{Impl, Sha256}, // Digest
     Executor,
     ExecutorEnv,
     SessionReceipt,
+    SessionFlatReceipt,
 };
 use sha_methods2::{HASH_ELF, HASH_ID, HASH_RUST_CRYPTO_ELF};
 
@@ -130,6 +133,16 @@ fn main() {
     println!("proven_val {}", outputs.proven_val);
     println!("operation {}", outputs.operation);
     println!("result {}", outputs.result);
+
+    // receipt to SessionFlatReceipt
+
+    // let serialized = bincode::serialize(&rece).unwrap();
+
+    let file: () = match std::fs::write("./receipts.bin",  receipt.encode()) {
+        Ok(file) => file,
+        Err(error) => panic!("Unable to write file: {:?}", error),
+    };
+
 }
 
 #[cfg(test)]

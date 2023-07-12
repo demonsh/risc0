@@ -1279,6 +1279,7 @@ dependencies = [
 name = "example"
 version = "0.12.0"
 dependencies = [
+ "bincode",
  "clap 4.3.2",
  "hex",
  "hex-literal",
